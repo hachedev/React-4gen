@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import Navbar from '../components/Navbar'
-import PostCardList from '../components/PostCardList'
+import PostCardList from '../components/RepoCardList'
 
 import api from '../lib/api'
 
@@ -10,7 +10,7 @@ class Index extends Component {
     super(props)
 
       this.state = {
-      posts: [],
+      repos: [],
       hasError: false,
       errorMessage: ''
     }
@@ -18,14 +18,15 @@ class Index extends Component {
 
   async componentDidMount () {
     try {
-      const posts = await api.getPosts()
+      const repos = await api.getRepos()
 
-      this.setState({ posts})
+      this.setState({ repos })
     } catch (error) {
       this.setState({
         hasError: true,
         errorMessage: error.message
       })
+      console.error(error)
     }
   }
 
@@ -36,7 +37,7 @@ class Index extends Component {
         {
           !this.state.hasError ? (
             <PostCardList
-              posts={ this.state.posts}
+              repos={ this.state.repos}
             />
           ) : (
             <h1 className="title is error">

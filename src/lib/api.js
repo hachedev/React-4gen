@@ -1,11 +1,9 @@
 export default {
-  async getPosts () {
-    const response = await fetch('http://localhost:8080/posts')
-    const jsonBody = await response.json ()
-
-    const { posts } = jsonBody.data
+  async getRepos () {
+    const response = await fetch('https://api.github.com/repositories#')
+    const jsonBody = await response.json()
 
     if(!response.ok) throw new Error('Ya valio el back')
-    return posts
+    return jsonBody
   }
 }

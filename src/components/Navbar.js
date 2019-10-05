@@ -42,8 +42,8 @@ class Navbar extends Component {
           <NavbarNav>
             <NavbarNavItem active>
               <NavbarNavLink
-                to="/"
-                text="Home"
+                to="https://github.com/"
+                text="Github"
                 label="go to home page (current)"
               />
             </NavbarNavItem>
@@ -51,14 +51,14 @@ class Navbar extends Component {
             <NavbarNavItem>
               <NavbarNavLink
                 to="/create"
-                text="Crear Post"
+                text="Crear Repo"
                 label="go to link page"
               />
             </NavbarNavItem>
             <NavbarNavItem>
               <NavbarNavLink
-                to="/get-post"
-                text="Ver Posts"
+                to="/"
+                text="Ver Repos"
                 label="go to link page"
               />
             </NavbarNavItem>
